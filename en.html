@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Independent acceptance review with METHOD. Explore an illustrative report and a real published case.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light">
+  <title>METHOD · Independent acceptance review</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#workspace">Skip to the example</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="METHOD, back to top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>METHOD<span class="brand-dot">.</span></a>
+      <nav aria-label="Page navigation">
+        <a href="#workspace">Example report</a>
+        <a href="#about">For clients</a>
+        <a href="./index.html" lang="ru" hreflang="ru" aria-label="Russian version">RU</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <noscript>Enable JavaScript for the interactive example. The service description and the real report link are available below.</noscript>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="shell hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow hero-eyebrow"><span></span> Review a software deliverable</p>
+          <h1 id="hero-title">Independent<br>acceptance review</h1>
+          <p class="hero-description">Accept work by an AI agent or contractor against agreed conditions. Get a report with observations, the basis for its conclusion and steps to reproduce the checks.</p>
+          <div class="hero-actions"><a class="hero-link" href="#contact">Discuss a review <span aria-hidden="true">↓</span></a><a class="hero-secondary" href="#workspace">Explore the example report</a></div>
+        </div>
+        <figure class="trace" role="img" aria-label="From a version and condition through checks and evidence to a conclusion">
+          <div class="trace-grid" aria-hidden="true">
+            <div class="trace-node node-object"><span class="trace-index">01</span><strong>Version</strong><span>Deliverable under review</span></div>
+            <div class="trace-node node-condition"><span class="trace-index">02</span><strong>Condition</strong><span>What must hold</span></div>
+            <div class="trace-node node-evidence"><span class="trace-index">03</span><strong>Evidence</strong><span>What the check observed</span></div>
+            <div class="trace-node node-decision"><span class="trace-index">04</span><strong>Conclusion</strong><span>The basis for a decision</span></div>
+            <span class="trace-line line-branch"></span><span class="trace-line line-down"></span>
+            <span class="trace-join"></span><span class="trace-arrow arrow-one">↓</span><span class="trace-arrow arrow-two">↓</span>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="case-section shell" aria-labelledby="case-title">
+      <div class="case-heading"><p class="eyebrow">A real review</p><h2 id="case-title">PREMIUM+<br> Data recovery</h2></div>
+      <div class="case-copy">
+        <p>Data recovery and access separation were checked on a fresh installation of this open-source project. The report is published in the project discussion.</p>
+        <p>Project data and the checked attachments were preserved. The PDF generated after restoration had no proposal content. A pre-backup PDF was unavailable, so the relationship between this failure and restoration remained unestablished.</p>
+        <p class="case-status">Review requested by the project owner. The owner specified the checks, and the acceptance criteria were published before the run. As of 12 November 2026, no response to the report has been received from the maintainer. No overall product acceptance verdict was issued.</p>
+        <a class="text-link" href="https://github.com/zg9bkbrv7p-beep/premiumplus-community/issues/1#issuecomment-6747838317" target="_blank" rel="noopener noreferrer">Read the published report on GitHub</a>
+      </div>
+    </section>
+
+    <section class="workspace shell" id="workspace" aria-labelledby="workspace-title">
+      <div class="workspace-header">
+        <div>
+          <h2 id="workspace-title">Explore an illustrative report</h2>
+          <p id="mode-description">Edit observations and confirm records to see how the conclusion changes. All example data is fictional.</p>
+        </div>
+        <div class="switch mode-switch" role="group" aria-label="Choose the review object">
+          <button type="button" data-mode="demo" aria-pressed="true">CSV example</button>
+          <button type="button" data-mode="custom" aria-pressed="false">Your example</button>
+        </div>
+      </div>
+
+          <section class="panel rule-panel" aria-labelledby="rule-title">
+            <h3 id="rule-title">Rule set for this example</h3>
+            <p>Every added condition is required. Specify the object, version and environment. The conclusion uses confirmed records.</p>
+            <ul>
+              <li><strong>Do not accept</strong> when at least one violation is established.</li>
+              <li><strong>Accept</strong> when every specified condition is met.</li>
+              <li><strong>Insufficient evidence</strong> when gaps remain and no violation has been established.</li>
+            </ul>
+            <p class="rule-note">For a real engagement, the decision rule and sufficient evidence are agreed before the checks.</p>
+          </section>
+
+      <div class="workspace-grid">
+        <div class="workspace-main">
+          <section class="panel scope" aria-labelledby="scope-title">
+            <div class="panel-heading">
+              <span class="step" aria-hidden="true">01</span>
+              <h3 id="scope-title">Review object</h3>
+            </div>
+            <div class="scope-fields">
+              <label>Deliverable under review<input id="object-name" type="text" placeholder="For example, an order export" autocomplete="off"></label>
+              <label>Version or artifact<input id="object-version" type="text" placeholder="Commit SHA or build ID" autocomplete="off" spellcheck="false"></label>
+              <label>Check environment<input id="object-environment" type="text" placeholder="For example, a test environment" autocomplete="off"></label>
+            </div>
+          </section>
+
+          <section class="panel checks" aria-labelledby="checks-title">
+            <div class="panel-heading">
+              <span class="step" aria-hidden="true">02</span>
+              <h3 id="checks-title">Conditions and evidence</h3>
+            </div>
+            <p class="panel-intro">Enter the observation and source, select the outcome and confirm the record. Editing requires confirmation again.</p>
+            <div id="checks-list"></div>
+            <button id="add-check" class="add-check" type="button"><span aria-hidden="true">＋</span> Add a condition</button>
+          </section>
+        </div>
+
+        <aside class="sidebar" aria-label="Conclusion and example scenarios">
+          <section id="verdict-panel" class="panel verdict" aria-labelledby="verdict-title">
+            <div class="panel-heading">
+              <span class="step" aria-hidden="true">03</span>
+              <h3 id="verdict-title">Illustrative conclusion</h3>
+            </div>
+            <p id="verdict-context" class="verdict-context">Illustrative result. All observations are fictional.</p>
+            <div id="verdict-live" aria-live="polite" aria-atomic="true">
+              <div id="verdict-display" class="verdict-display" data-outcome="unknown">
+                <span id="verdict-icon" class="verdict-icon" aria-hidden="true">?</span>
+                <strong id="verdict-label">Insufficient evidence</strong>
+              </div>
+              <p id="verdict-reason" class="verdict-reason"></p>
+            </div>
+            <button id="verdict-evidence" class="verdict-evidence" type="button" hidden></button>
+            <div class="evidence-progress" aria-hidden="true">
+              <div id="progress-pass"></div><div id="progress-fail"></div><div id="progress-unknown"></div>
+            </div>
+            <dl class="tally">
+              <div><dt><i class="dot pass" aria-hidden="true"></i> Met</dt><dd id="count-pass">0</dd></div>
+              <div><dt><i class="dot fail" aria-hidden="true"></i> Violated</dt><dd id="count-fail">0</dd></div>
+              <div><dt><i class="dot unknown" aria-hidden="true"></i> Not established</dt><dd id="count-unknown">0</dd></div>
+            </dl>
+            <p class="verdict-boundary">The conclusion applies to the specified version, environment and conditions. A person must consider each record's limitations.</p>
+          </section>
+
+          <section class="panel scenario-panel" id="scenario-panel" aria-labelledby="scenario-title">
+            <h3 id="scenario-title">Explore another outcome</h3>
+            <p>Prepared observations from three fictional runs.</p>
+            <div class="scenario-list" role="group" aria-label="Illustrative run">
+              <button type="button" data-scenario="fail" aria-pressed="true"><i class="dot fail" aria-hidden="true"></i> A violation was found</button>
+              <button type="button" data-scenario="pass" aria-pressed="false"><i class="dot pass" aria-hidden="true"></i> All conditions are met</button>
+              <button type="button" data-scenario="unknown" aria-pressed="false"><i class="dot unknown" aria-hidden="true"></i> Could not establish</button>
+            </div>
+          </section>
+          <p class="local-note">The form checks that records are filled in and confirmed. A person assesses evidence quality. Reloading or changing language clears entered data.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="shell about-inner">
+        <div>
+          <p class="eyebrow about-eyebrow">For clients</p>
+          <h2 id="about-title">What METHOD<br> provides</h2>
+        </div>
+        <div class="about-copy">
+          <p>Before the review, you agree on the deliverable version, acceptance conditions and sufficient evidence. An independent reviewer runs the checks and records what could be established.</p>
+          <p>You receive a report with a conclusion for the reviewed version, evidence and reproduction steps. Use it to decide whether to accept the deliverable, request corrections or collect missing information.</p>
+          <p>Recipients of the complete report are agreed in advance. They receive it regardless of its conclusion or the payer's position.</p>
+          <p>Reviews are led by Madi Baimuratov, the author of METHOD. The basis for the conclusion is available for rechecking within the agreed scope. Identified errors in a report are examined and corrected.</p>
+        </div>
+      </div>
+    </section>
+    <section class="contact-section shell" id="contact" aria-labelledby="contact-title">
+      <div><p class="eyebrow">Getting started</p><h2 id="contact-title">Discuss one review</h2></div>
+      <div class="contact-copy"><p>The initial scope is one fixed version and one agreed scenario. Scope, sufficient evidence, report recipients and the fee are agreed before work begins.</p><p>Describe the deliverable you need to accept, the deadline and what you are uncertain about.</p><a class="contact-button" href="https://t.me/Madbai" target="_blank" rel="noopener noreferrer">Contact Madi on Telegram</a><span class="contact-handle">@Madbai</span></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <a class="brand" href="#top" aria-label="METHOD, back to top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>METHOD<span class="brand-dot">.</span></a>
+      <span>Independent acceptance review demo</span>
+    </div>
+  </footer>
+
+  <template id="check-template">
+    <article class="check">
+      <div class="check-top">
+        <span class="check-number" aria-hidden="true"></span>
+        <label class="condition-label"><span class="sr-only">Expected result</span><textarea class="condition" rows="2" placeholder="For example, the CSV contains three data rows"></textarea></label>
+        <span class="check-state" data-state="unknown"></span>
+      </div>
+      <div class="check-actions">
+        <label class="result-label"><span class="sr-only">Check outcome</span><select class="result">
+          <option value="pending">Not checked yet</option>
+          <option value="pass">Met</option>
+          <option value="fail">Violated</option>
+          <option value="unknown">Could not establish</option>
+        </select></label>
+        <button class="evidence-toggle" type="button" aria-expanded="false"><span class="evidence-caption">Evidence</span><span class="chevron" aria-hidden="true"></span></button>
+        <button class="remove-check" type="button" aria-label="Remove condition" title="Remove condition">×</button>
+      </div>
+      <p class="check-note" hidden></p>
+      <div class="check-details" hidden>
+        <label>Observed result<textarea class="observation" rows="3" placeholder="Describe the result and compare it with the expectation"></textarea></label>
+        <label>Source or reproduction steps<textarea class="source" rows="2" placeholder="For example, a log and its relevant line, or steps to repeat the check"></textarea></label>
+        <label class="limitations-label">Limitations<textarea class="limitations" rows="2" placeholder="What limits this conclusion or needs another check"></textarea></label>
+      </div>
+      <div class="confirmation-row"><button class="confirm-check" type="button">Confirm record</button><span class="confirmation-status"></span></div>
+    </article>
+  </template>
+  <a id="mobile-verdict" class="mobile-verdict" href="#verdict-panel" data-outcome="unknown">
+    <strong id="mobile-verdict-label"></strong>
+    <span id="mobile-verdict-context"></span>
+  </a>
+</body>
+</html>
