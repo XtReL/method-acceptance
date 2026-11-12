@@ -309,3 +309,32 @@ verdictEvidence.addEventListener("click", () => {
 });
 
 showCase();
+
+// r3: the mobile verdict bar appears only while the object or records are on screen and the verdict panel is not.
+const mobileVerdict = element("mobile-verdict");
+const verdictPanel = element("verdict-panel");
+const editingPanels = document.querySelectorAll(".panel.scope, .panel.checks");
+const visiblePanels = new Set();
+let verdictPanelVisible = false;
+
+function syncMobileVerdict() {
+  const show = visiblePanels.size > 0 && !verdictPanelVisible;
+  mobileVerdict.classList.toggle("is-visible", show);
+  document.body.classList.toggle("has-mobile-verdict", show);
+  mobileVerdict.setAttribute("aria-hidden", String(!show));
+  mobileVerdict.tabIndex = show ? 0 : -1;
+}
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.target === verdictPanel) verdictPanelVisible = entry.isIntersecting;
+      else if (entry.isIntersecting) visiblePanels.add(entry.target);
+      else visiblePanels.delete(entry.target);
+    }
+    syncMobileVerdict();
+  });
+  for (const panel of editingPanels) observer.observe(panel);
+  observer.observe(verdictPanel);
+}
+syncMobileVerdict();
